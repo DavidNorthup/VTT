@@ -1,0 +1,24 @@
+- name: Network Getting Started First Playbook
+  gather_facts: false
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Display setup information
+      debug:
+        msg: "Installing up everything required to run the VTT application"
+    - name: Install docker
+      dnf:
+        name: docker
+        state: present
+    - name: Install node 
+      dnf:
+        name: nodejs
+        state: present
+    - name: Install NPM
+      dnf:
+        name: npm
+        state: present
+    - name: Install maven
+      dnf:
+        name: maven
+        state: present
